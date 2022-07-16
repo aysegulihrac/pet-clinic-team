@@ -1,10 +1,10 @@
 resource "aws_iam_policy" "policy_for_master_role" {
-  name        = "policy_for_master_role"
+  name        = "policy_for_master_role1"
   policy      = file("./modules/IAM/policy_for_master.json")
 }
 
 resource "aws_iam_policy" "policy_for_worker_role" {
-  name        = "policy_for_worker_role"
+  name        = "policy_for_worker_role1"
   policy      = file("./modules/IAM/policy_for_worker.json")
 }
 
