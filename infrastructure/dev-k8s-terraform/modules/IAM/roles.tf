@@ -28,7 +28,7 @@ resource "aws_iam_role" "role_for_master" {
   })
 
   tags = {
-    Name = "role_for_master1"
+    Name = "role_for_master"
   }
 }
 
@@ -52,7 +52,7 @@ resource "aws_iam_role" "role_for_worker" {
   })
 
   tags = {
-    Name = "role_for_worker1"
+    Name = "role_for_worker"
   }
 }
 
@@ -69,19 +69,19 @@ resource "aws_iam_policy_attachment" "attach_for_worker" {
 }
 
 resource "aws_iam_instance_profile" "profile_for_master" {
-  name  = "profile_for_master1"
+  name  = "profile_for_master"
   role = aws_iam_role.role_for_master.name
 }
 
 resource "aws_iam_instance_profile" "profile_for_worker" {
-  name  = "profile_for_worker1"
+  name  = "profile_for_worker"
   role = aws_iam_role.role_for_worker.name
 }
 
 output master_profile_name {
-  value       = aws_iam_instance_profile.profile_for_master1.name
+  value       = aws_iam_instance_profile.profile_for_master.name
 }
 
 output worker_profile_name {
-  value       = aws_iam_instance_profile.profile_for_worker1.name
+  value       = aws_iam_instance_profile.profile_for_worker.name
 }
